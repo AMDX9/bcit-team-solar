@@ -9,7 +9,7 @@ package
 	 */
 	public class bottlebar extends Entity 
 	{
-		[Embed(source = 'assets/bottlebar.png')] private const PLAYER:Class;
+		[Embed(source = 'assets/entities/bottlebar.png')] private const PLAYER:Class;
 		public function bottlebar()
 		{
 			x = 450;

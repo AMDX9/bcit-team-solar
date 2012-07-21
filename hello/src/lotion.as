@@ -9,7 +9,7 @@ package
 	 */
 	public class lotion extends Entity 
 	{
-				[Embed(source = 'assets/bottle-ground.png')] private const PLAYER:Class;
+				[Embed(source = 'assets/entities/bottle-ground.png')] private const PLAYER:Class;
 		public function lotion()
 		{
 			setHitbox(30, 45);

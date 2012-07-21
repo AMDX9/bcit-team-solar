@@ -16,8 +16,8 @@ package
 		private var background:Image;
 		//private var bar:Image = Image.createRect(100, 20, 0xFFA500);
 		//private var bar:Image = new Image('assets/energybar.png', new Rectangle(500,20,50,50));
-		[Embed(source = 'assets/energybarcontent.png')] private const CONTENT:Class;
-		[Embed(source = 'assets/energybarback.png')] private const BACKGROUND:Class;
+		[Embed(source = 'assets/entities/energybarcontent.png')] private const CONTENT:Class;
+		[Embed(source = 'assets/entities/energybarback.png')] private const BACKGROUND:Class;
 		public function energybar()
 		{
 			content = new Image(CONTENT);
