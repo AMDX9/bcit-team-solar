@@ -12,7 +12,7 @@ package
 	 */
 	public class MyBoy extends Entity
 	{
-		[Embed(source = 'assets/walkcycle/boy_all.png')] 
+		[Embed(source = 'assets/boy/walkcycle/boy_all.png')] 
 		private const PLAYER:Class;
 		
 		public var sprPlayer:Spritemap = new Spritemap(PLAYER, 50, 100);

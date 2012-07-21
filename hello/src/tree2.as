@@ -9,7 +9,7 @@ package
 	 */
 	public class tree2 extends Entity 
 	{
-			[Embed(source = 'assets/conifer.png')] private const PLAYER:Class;
+			[Embed(source = 'assets/trees/conifer.png')] private const PLAYER:Class;
 		public function tree2()
 		{
 			x = 600;
