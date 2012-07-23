@@ -23,7 +23,7 @@ package
 		}
 		
 		override public function init():void {
-			FP.world = new NewClass;
+			FP.world = new MenuWorld;
 			trace("FlashPunk has started successfully!");
 		}
 		

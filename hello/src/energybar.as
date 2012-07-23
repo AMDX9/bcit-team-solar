@@ -9,7 +9,7 @@ package
 	 * ...
 	 * @author joseph
 	 */
-	public class energybar extends Entity 
+	public class energybar extends Entity
 	{
 		private var value:Number;
 		private var content:Image;
@@ -39,7 +39,7 @@ package
 			content.clipRect.width = value*2.74+13;
 			content.clear();
 			content.updateBuffer();
-			value += FP.elapsed * 5;
+			layer = -999999;
 		}
 	}
 	
