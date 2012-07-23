@@ -15,7 +15,7 @@ package
 	{
 		[Embed(source = 'assets/boy/walkcycle/boy_all.png')] 
 		private const PLAYER:Class;
-		[Embed(source = 'assets/boy/boycoloured.png')] 
+		[Embed(source = 'assets/boy/boy_front.png')] 
 		private const STAND:Class;
 		
 		public var sprPlayer:Spritemap = new Spritemap(PLAYER, 50, 100);
