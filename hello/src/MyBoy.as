@@ -22,16 +22,8 @@ package
 		private var total:Number;
 		private var facingleft:Boolean = false;
 		private var stand:Image = new Image(STAND);
-		
-		public var prevx:Number = 0;
-		public var prevy:Number = 0;
-		public var face:Number = 0;   // 0 = facing right, 1 = facing left.
-		
-		public var destx:Number = 0;
-		public var desty:Number = 0;
-		
-	
-		
+		private var diffx:Number = 0;
+		private var diffy:Number = 0;
 		public function MyBoy()
 		{
 			super(400, 300, stand);
@@ -45,40 +37,12 @@ package
 		{
 			layer = -(y + 90);
 			var sumx:int = 0, sumy:int = 0, temp:int;
-			var bottle:Lotion = collide("lotion", x, y) as Lotion;
-			if (bottle)
-			{
-				bottle.movefar();
-				
-			}
-			
 			if (Input.mousePressed)
 			{
-				destx = Input.mouseX;
-				desty = Input.mouseY;
+				diffx = x - Input.mouseX;
+				diffy = y - Input.mouseY;
 				
 			}
-			
-			if (x < destx)
-			{
-				//sumx -= 1;
-			}
-			
-			if (x > destx)
-			{
-				//sumx += 1;
-			}
-			
-			if ((y > desty) && (y > 200))
-			{
-				//sumy -= 1;
-			}
-			
-			if ((y < desty) && (y < 500))
-			{
-				//sumy += 1;
-			}
-			
 			
 			if (Input.check(Key.LEFT))
 			{

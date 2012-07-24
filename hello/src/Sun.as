@@ -30,6 +30,10 @@ package
 			sunx = newX;
 		}
 		
+		public function getX():Number {
+			return sunx;
+		}
+		
 	}
 
 }

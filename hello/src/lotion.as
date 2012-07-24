@@ -20,6 +20,7 @@ package
 		
 		public function movefar():void
 		{
+			
 			moveTo(Math.random() * 750,Math.random() * 300 + 200);
 		}
 	}

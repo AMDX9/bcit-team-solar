@@ -9,26 +9,28 @@ package
 	 * ...
 	 * @author joseph
 	 */
-	public class energybar extends Entity
+	public class Energybar extends Entity
 	{
-		private var value:Number;
+		private var value:Number = 0;
 		private var content:Image;
 		private var background:Image;
-		//private var bar:Image = Image.createRect(100, 20, 0xFFA500);
-		//private var bar:Image = new Image('assets/energybar.png', new Rectangle(500,20,50,50));
+		private var maxBurn:int = 0;
 		[Embed(source = 'assets/entities/energybarcontent.png')] private const CONTENT:Class;
 		[Embed(source = 'assets/entities/energybarback.png')] private const BACKGROUND:Class;
-		public function energybar()
+		public function Energybar()
 		{
 			content = new Image(CONTENT);
 			background = new Image(BACKGROUND);
 			super(500, 20, content);
 			addGraphic(background);
-			value = 0;
+			layer = -999999;
 		}
 		
 		public function setValue(newValue:Number):void {
-			value = newValue;
+			value = (newValue < 0)?0:newValue;
+			if (value > maxBurn) {
+				maxBurn = value;
+			}
 		}
 		
 		public function getValue():Number {
@@ -39,7 +41,10 @@ package
 			content.clipRect.width = value*2.74+13;
 			content.clear();
 			content.updateBuffer();
-			layer = -999999;
+		}
+		
+		public function getMaxBurn():int {
+			return maxBurn;
 		}
 	}
 	
