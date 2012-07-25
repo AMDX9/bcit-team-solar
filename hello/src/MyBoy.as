@@ -13,29 +13,32 @@ package
 	 */
 	public class MyBoy extends Entity
 	{
-		[Embed(source = 'assets/boy/walkcycle/boy_all.png')] 
+		[Embed(source = 'assets/boy/boy_all.png')] 
 		private const PLAYER:Class;
-		[Embed(source = 'assets/boy/boy_front.png')] 
-		private const STAND:Class;
-		
 		public var sprPlayer:Spritemap = new Spritemap(PLAYER, 50, 100);
 		private var total:Number;
 		private var facingleft:Boolean = false;
-		private var stand:Image = new Image(STAND);
 		private var diffx:Number = 0;
 		private var diffy:Number = 0;
+		private var burnt:Boolean = false;
 		public function MyBoy()
 		{
-			super(400, 300, stand);
+			super(400, 300, sprPlayer);
 			setHitbox(40, 90);			
 			sprPlayer.add("right", [0, 1, 2, 3, 4, 5, 6, 7], 8, true);
 			sprPlayer.add("left", [8, 9, 10, 11, 12, 13, 14, 15], 8, true);
+			sprPlayer.add("stand", [16], 0, false);
+			sprPlayer.add("burn", [17, 18, 19, 20, 21, 22, 23, 24, 25, 26], 10, false);
 			type = "player";
 			total = y;
+			sprPlayer.play("stand");
 		}
 		override public function update():void
 		{
 			layer = -(y + 90);
+			if (burnt) {
+				return;
+			}
 			var sumx:int = 0, sumy:int = 0, temp:int;
 			if (Input.mousePressed)
 			{
@@ -68,7 +71,6 @@ package
 			}
 			
 			total += sumy * 250 * FP.elapsed;
-			FP.console.log(total);
 			temp = total;
 			y = temp;
 			MyWorld.movement.shift(sumx * 300 * FP.elapsed);
@@ -92,8 +94,13 @@ package
 			}
 			
 			if (sumx == 0 && sumy == 0) {
-				graphic = stand;
+				sprPlayer.play("stand");
 			}
+		}
+		
+		public function burn():void {
+			sprPlayer.play("burn");
+			burnt = true;
 		}
 	}
 	

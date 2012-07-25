@@ -38,7 +38,7 @@ package
 		}
 		
 		override public function update():void {
-			content.clipRect.width = value*2.74+13;
+			content.clipRect.width = value*2.79+13;
 			content.clear();
 			content.updateBuffer();
 		}

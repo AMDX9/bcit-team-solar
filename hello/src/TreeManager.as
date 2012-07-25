@@ -33,7 +33,7 @@ package
 					count++;
 				}
 			}
-			
+			FP.console.log(trees.length);
 			if (count < 2 && !generated && (leftBound > 0 || rightBound < FP.width)) {
 				generate();
 			}
